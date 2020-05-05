@@ -20,16 +20,24 @@ keys = {
 
 }
 
-file = open(("/Users/shaynakiblin/PycharmProjects/madLibs/src/prompts/" + "testFile.txt"), 'r')
+file = open(("/Users/shaynakiblin/PycharmProjects/madLibs/src/prompts/" + "sentenceTest.txt"), 'r')
 
 lines = file.readlines()
 
 for line in lines:
     line = line.strip()
-    if line in keys:
-        print(keys[line])
-    else:
-        print("not in dict")
+    words = line.split()
+    for word in words:
+        if word in keys:
+            userin = input("Give a(n) " + keys[word] + ": ")
+        else:
+            pass
+    for word in words:
+        if word in keys:
+            print(userin, end =" ")
+        else:
+            print(word, end =" ")
+
 
 
 
